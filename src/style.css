@@ -1,0 +1,14 @@
+.form-control {
+  margin-right: 10px;
+}
+.card {
+  display: block;
+  margin: 5px;
+  max-width: 50px;
+}
+.btn-outline-secondary {
+  margin-right: 10px;
+}
+.btn-success {
+  margin-left: 10px;
+}
