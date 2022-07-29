@@ -95,6 +95,10 @@ function showPosition(position) {
 function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+function startPage(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
 let form = document.querySelector("form");
 form.addEventListener("submit", search);
@@ -107,3 +111,5 @@ locationBtn.addEventListener("click", getPosition);
 let apiKey = "52a2ba2e244b3e0ea68aa04f77e27cd8";
 
 let celsiusTemp = null;
+
+startPage("Dnipro");

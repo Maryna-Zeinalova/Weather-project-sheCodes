@@ -54,6 +54,7 @@ header {
 }
 .temperature {
   font-size: 50px;
+  font-weight: 500;
   position: relative;
   left: -30px;
 }
