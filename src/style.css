@@ -7,6 +7,7 @@ header {
     rgb(252, 165, 241, 0.3) 1.8%,
     rgb(181, 255, 255, 0.3) 100.5%
   );
+
   margin: 10px auto;
   padding: 10px 20px;
   max-width: 900px;
@@ -60,6 +61,12 @@ header {
   font-size: 18px;
   position: relative;
   top: -25px;
+  text-decoration: none;
+}
+.temperature .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
 }
 .extraInfo {
   position: relative;

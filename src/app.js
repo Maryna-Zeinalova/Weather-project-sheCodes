@@ -28,22 +28,28 @@ displayDate();
 
 function convertToFarenheit(event) {
   event.preventDefault();
+  farenheit.classList.add("active");
+  celcius.classList.remove("active");
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = 66;
+  temp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
 }
 let farenheit = document.querySelector("#farenheit-link");
 farenheit.addEventListener("click", convertToFarenheit);
 
 function convertToCelcius(event) {
   event.preventDefault();
+  farenheit.classList.remove("active");
+  celcius.classList.add("active");
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = 19;
+  temp.innerHTML = Math.round(celsiusTemp);
 }
 let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", convertToCelcius);
 
 //weather api
 function showTemperature(response) {
+  celsiusTemp = response.data.main.temp;
+
   let temp = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = `${temp}`;
@@ -99,3 +105,5 @@ let locationBtn = document.querySelector("#current-location");
 locationBtn.addEventListener("click", getPosition);
 
 let apiKey = "52a2ba2e244b3e0ea68aa04f77e27cd8";
+
+let celsiusTemp = null;
