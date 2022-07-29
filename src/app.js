@@ -92,6 +92,8 @@ function getPosition(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", search);
+let searchButton = document.querySelector("#search");
+searchButton.addEventListener("click", search);
 
 let locationBtn = document.querySelector("#current-location");
 locationBtn.addEventListener("click", getPosition);
