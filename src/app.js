@@ -26,17 +26,6 @@ function displayDate() {
 }
 displayDate();
 
-//   function search(event) {
-//    event.preventDefault();
-//   let searchInput = document.querySelector(".form-control");
-//   console.log(searchInput.value);
-//    let h3 = document.querySelector("h3");
-//    h3.innerHTML = searchInput.value;
-//  }
-
-// let form = document.querySelector("form");
-// form.addEventListener("submit", search);
-
 function convertToFarenheit(event) {
   event.preventDefault();
   let temp = document.querySelector("#temperature");
