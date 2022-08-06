@@ -101,6 +101,30 @@ function startPage(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <div class="weather-forecast-day">${day}</div>
+            <img
+              id="wicon"
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Weather icon"
+            />
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-max">26</span>°
+              <span class="weather-forecast-min">19</span>°
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("form");
 form.addEventListener("submit", search);
 let searchButton = document.querySelector("#search");
@@ -114,3 +138,5 @@ let apiKey = "52a2ba2e244b3e0ea68aa04f77e27cd8";
 let celsiusTemp = null;
 
 startPage("Dnipro");
+
+displayForecast();
