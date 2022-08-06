@@ -1,4 +1,7 @@
-header {
+hr {
+  margin-top: 5px;
+}
+.container {
   border: 2px solid #cadefc;
   border-radius: 10px;
   box-shadow: 1px 1px 2px 4px #c3bef0;
@@ -75,6 +78,24 @@ header {
 }
 .humidity {
   margin-bottom: 0;
+}
+.weather-forecast {
+  margin-top: 5px;
+  text-align: center;
+}
+.weather-forecast-day {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.weather-forecast-temp {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.weather-forecast-min {
+  opacity: 0.7;
 }
 .git-link {
   text-align: center;

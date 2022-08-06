@@ -15,42 +15,90 @@
     <title>Weather</title>
   </head>
   <body>
-    <header>
     <div class="container">
       <form class="search-pannel">
-      <div class="input-group mb-3 row">
-        <input
-          type="text"
-          class="form-control col-6"
-          placeholder="Enter the city"
-        />
-        <button class="btn btn-outline-secondary col-2 search-button" id="search" type="button">
-          Search
-        </button>
-        <button type="button" class="btn btn-success col-2 current-button" id="current-location">Current</button></div>
+        <div class="input-group mb-3 row">
+          <input
+            type="text"
+            class="form-control col-6"
+            placeholder="Enter the city"
+          />
+          <button
+            class="btn btn-outline-secondary col-2 search-button"
+            id="search"
+            type="button"
+          >
+            Search
+          </button>
+          <button
+            type="button"
+            class="btn btn-success col-2 current-button"
+            id="current-location"
+          >
+            Current
+          </button>
+        </div>
       </form>
-      
-        <div class="currentCity row">
-          <div class="mainInfo col-7">
-            <h3 class="city">Dnipro</h3>
-            <p class="date-time" id="date">June 30, 18:14</p>
-            <div class="row">
-            <div class="col-4"><p id="icon"><img id="wicon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Weather icon"></p>
-            <p class="weather-description">partly sunny</p></div>
-            <div class="col-8"><p class="temperature"><span id="temperature">27</span> <span class="units"> <a id="celcius-link" href = "#" class="active">°C </a>| <a id ="farenheit-link" href="#">°F</a></span></p></div>
+
+      <div class="currentCity row">
+        <div class="mainInfo col-7">
+          <h3 class="city">Dnipro</h3>
+          <p class="date-time" id="date">June 30, 18:14</p>
+          <div class="row">
+            <div class="col-4">
+              <p id="icon">
+                <img
+                  id="wicon"
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Weather icon"
+                />
+              </p>
+              <p class="weather-description">partly sunny</p>
+            </div>
+            <div class="col-8">
+              <p class="temperature">
+                <span id="temperature">27</span>
+                <span class="units">
+                  <a id="celcius-link" href="#" class="active">°C </a>|
+                  <a id="farenheit-link" href="#">°F</a></span
+                >
+              </p>
+            </div>
           </div>
+        </div>
+        <div class="extraInfo col-5">
+          <p class="humidity">
+            💧Humidity: <span class="humidity-prop">69</span>%
+          </p>
+          <p class="wind">🌬Wind: <span class="wind-prop">14 </span> Kmph</p>
+        </div>
+        <hr />
+      </div>
+
+      <div class="weather-forecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="weather-forecast-day">Sun</div>
+            <img
+              id="wicon"
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="Weather icon"
+            />
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-max">26</span>°
+              <span class="weather-forecast-min">19</span>°
+            </div>
           </div>
-          <div class="extraInfo col-5">
-            <p class="humidity">
-              💧Humidity: <span class="humidity-prop">69</span>%
-            </p>
-            <p class="wind">🌬Wind: <span class="wind-prop">14 </span> Kmph</p>
-           </div>
-        </header>
-      <p class="git-link">
-        <a href="https://github.com/Maryna-Zeinalova/Weather-project-sheCodes" target="_blank">Open-source code</a>, by Maryna Zeinalova
-      </p>
+        </div>
+      </div>
     </div>
+    <p class="git-link">
+      <a
+        href="https://github.com/Maryna-Zeinalova/Weather-project-sheCodes"
+        target="_blank"
+        >Open-source code</a
+      >, by Maryna Zeinalova
+    </p>
     <script src="src/app.js"></script>
   </body>
 </html>
