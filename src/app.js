@@ -26,26 +26,6 @@ function displayDate() {
 }
 displayDate();
 
-function convertToFarenheit(event) {
-  event.preventDefault();
-  farenheit.classList.add("active");
-  celcius.classList.remove("active");
-  let temp = document.querySelector("#temperature");
-  temp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
-}
-let farenheit = document.querySelector("#farenheit-link");
-farenheit.addEventListener("click", convertToFarenheit);
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  farenheit.classList.remove("active");
-  celcius.classList.add("active");
-  let temp = document.querySelector("#temperature");
-  temp.innerHTML = Math.round(celsiusTemp);
-}
-let celcius = document.querySelector("#celcius-link");
-celcius.addEventListener("click", convertToCelcius);
-
 function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -155,7 +135,5 @@ let locationBtn = document.querySelector("#current-location");
 locationBtn.addEventListener("click", getPosition);
 
 let apiKey = "9b81de7ae752c035dcdf31ce35d734cc";
-
-let celsiusTemp = null;
 
 startPage("Dnipro");
