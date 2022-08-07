@@ -46,6 +46,11 @@ function convertToCelcius(event) {
 let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", convertToCelcius);
 
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //weather api
 function showTemperature(response) {
   celsiusTemp = response.data.main.temp;
@@ -73,6 +78,7 @@ function showTemperature(response) {
   let cityElement = response.data.name;
   let h3 = document.querySelector("h3");
   h3.innerHTML = `${cityElement}`;
+  getForecast(response.data.coord);
 }
 
 function search(event) {
@@ -101,7 +107,8 @@ function startPage(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
@@ -133,10 +140,8 @@ searchButton.addEventListener("click", search);
 let locationBtn = document.querySelector("#current-location");
 locationBtn.addEventListener("click", getPosition);
 
-let apiKey = "52a2ba2e244b3e0ea68aa04f77e27cd8";
+let apiKey = "9b81de7ae752c035dcdf31ce35d734cc";
 
 let celsiusTemp = null;
 
 startPage("Dnipro");
-
-displayForecast();
